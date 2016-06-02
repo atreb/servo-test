@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.dowjones.net/AtreB/servo-test.git"
   },
-  "author": "",
+  "author": "Bhupendra Atre",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4"
