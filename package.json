@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo success"
   },
+  "engines": {
+    "node": ">=4.8"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.dowjones.net/AtreB/servo-test.git"
