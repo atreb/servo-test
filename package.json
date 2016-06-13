@@ -7,7 +7,7 @@
     "test": "echo success"
   },
   "engines": {
-    "node": ">=4.8"
+    "node": "5.6.0"
   },
   "repository": {
     "type": "git",
