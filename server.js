@@ -19,11 +19,6 @@ app.get('/slowendpoint', function (req, res) {
   }, 12000);
 })
 
-app.get('/brokenendpoint', function (req, res) {
-  console.log('Got request for broken endpoint...throwing error');
-  throw new Error('oops');
-})
-
 app.listen(PORT, function () {
   console.log('Application started on port: ' + PORT);
 });
