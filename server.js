@@ -22,4 +22,3 @@ app.get('/slowendpoint', function (req, res) {
 app.listen(PORT, function () {
   console.log('Application started on port: ' + PORT);
 });
-
