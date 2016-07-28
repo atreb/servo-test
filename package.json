@@ -13,6 +13,7 @@
   "author": "Bhupendra Atre",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.13.4"
   }
 }

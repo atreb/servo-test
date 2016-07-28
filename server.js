@@ -1,7 +1,10 @@
 var express = require('express'),
     app = express(),
-    PORT = process.env.PORT || 4001;
+    PORT = process.env.PORT || 4001,
+    bodyParser = require('body-parser');
 
+
+app.use(bodyParser.json());
 
 app.get('/_health', function (req, res) {
   res.json({status: 'ok'});
@@ -18,6 +21,11 @@ app.get('/slowendpoint', function (req, res) {
     console.log('Sending response for slow endpoint');
     res.json({status: '12 sec delayed response'});
   }, 12000);
+});
+
+app.post('/postendpoint', function (req, res) {
+  console.log('inside post endpoint');
+  res.json(req.body);
 })
 
 app.listen(PORT, function () {
