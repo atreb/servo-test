@@ -4,7 +4,7 @@
   "description": "Simple Express app for servo testing",
   "main": "server.js",
   "scripts": {
-    "test": "echo success",
+    "test": "sleep 900;echo success",
     "start": "node server.js",
     "dev": "supervisor -e html,js,json -w . server.js"
   },
