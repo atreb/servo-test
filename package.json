@@ -4,9 +4,9 @@
   "description": "Simple Express app for servo testing",
   "main": "server.js",
   "scripts": {
-    "preinstall": "fc-cache",
     "test": "echo success",
-    "start": "node server.js",
+    "installfonts": "chmod 775 installfonts.sh && ./installfonts.sh",
+    "start": "npm run installfonts && node server.js",
     "dev": "supervisor -e html,js,json -w . server.js"
   },
   "repository": {
