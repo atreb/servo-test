@@ -3,7 +3,10 @@ var fs = require('fs'),
   app = express(),
   PORT = process.env.PORT || 4001,
   multiParty = require('multiparty'),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  pdf = require('html-pdf'),
+  pdfOptions = require('./pdf.options.json'),
+  fs = require('fs');
 
 app.use(bodyParser.json());
 
@@ -40,6 +43,16 @@ app.post('/uploadendpoint', function (req, res) {
       if (err) return res.json({error: err.stack});
       res.json({msg: 'File was successfully uploaded to server and then deleted'});
     });
+  });
+});
+
+app.get('/downloadpdf', function (req, res) {
+  var filename = './' + (new Date()).getTime() + '.pdf',
+    htmlString = fs.readFileSync('./pdf.html', 'utf-8').replace(/##date##/gi, new Date()),
+    options = pdfOptions.options;
+  pdf.create(htmlString, options).toFile(filename, function (err, data) {
+    if (err) return res.json({error: err.stack});
+    res.download(filename);//download file
   });
 });
 

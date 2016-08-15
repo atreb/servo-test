@@ -1,0 +1,153 @@
+<html>
+<head>
+  <style>
+    body {
+            font-family : "DejaVu LGC Serif";
+    }
+    #pageHeader {
+        color: #a18e53;
+    }
+    .header {
+        font-family : "DejaVu LGC Serif";
+        font-style: italic;
+        font-weight: bold;
+        font-size: 12px;
+        border-bottom: 1px solid #838585;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+    #pageHeader span.date {
+        color: #000066;
+        font-weight: normal;
+    }
+    #pageFooter {
+        font-family : "Galatia SIL";
+        border-top: 1px solid #838585;
+        padding-top: 5px;
+        width: 100%;
+    }
+    #pageFooter span.footer-text {
+        color: #a18e53;
+        font-size: 7px;
+        padding-left: 20px;
+        line-height: 120%;
+    }
+    #pageFooter span.pageNum{
+        color: #1A2F35;
+        font-size: 6px;
+        border: 1px dotted #a18e53;
+        padding: 3px;
+        float: right;
+        line-height: 80%;
+    }
+    .firstPageHeader {
+        background-color: #1A2F35;
+        padding-top: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 5px;
+        border-bottom: 3px solid #a18e53;
+        border-top: 3px solid #a18e53;
+        margin: 0 auto;
+        height: 20px;
+    }
+    .firstPageHeader span.date {
+        color: white;
+        font-weight: 300;
+        font-size: 100%;
+    }
+    .firstPageHeader span.title {
+        color : #a18e53;
+        font-weight: 400;
+        font-size: 180%;
+    }
+    .separator {
+      border: 0 none;
+      border-top: 1px dotted #838585;
+      background: none;
+      height:0;
+    }
+    .wsj-text {
+        color: white;
+        font-size: 7px;
+        font-weight: 200;
+        height: 8px;
+    }
+    p {
+     font-size: 11px;
+    }
+    h2, h3, h4, h5 {
+        padding: 0px;
+        margin: 8px 0px;
+       }
+       h2, h3 {
+        color: #122225;
+           font-family : "DejaVu LGC Serif";
+        font-weight: 800;
+       }
+       h2 {
+           font-size: 120%;
+       }
+       h3 {
+           font-size: 80%;
+       }
+       h4 {
+        font-size: 60%;
+        font-style: italic;
+        color: #122225;
+        font-weight: 500;
+       }
+       h5 {
+           color: #838585;
+        font-size: 50%;
+        font-weight: 200;
+       }
+    </style>
+</head>
+<body>
+<div id="pageHeader-first" class="header firstPageHeader">
+<span class="title">WSJ Pro Bankruptcy - </span><span class="date">##date##</span>
+</div>
+<div id="pageHeader" class="header">WSJ Pro Bankruptcy -  <span class="date">##date##</span>
+</div>
+
+<div id="pageFooter"><img width="80" height="13" align="left" src="data:image/png;base64,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" /><span class="footer-text">Copyright &copy;2016 Dow Jones and Company, Inc. Copying and redistribution prohibited without permission of the publisher.</span></div>
+
+<div class="pdf-body">
+  <h2>Creditors Get Chance to Vote on Energy XXI Restructuring</h2>
+  <h4>By Jacqueline Palank</h4>
+  <h5>Jul 18, 2016 11:14 am EDT</h5>
+  <div>Offshore oil and gas driller Energy XXI Ltd. won bankruptcy-court approval to put its restructuring plan to a vote by the creditors who are pushing for a bigger payout.
+A Texas bankruptcy court on Wednesday signed off on an outline of Energy XXI’s chapter 11 plan of reorganization, court records show, paving the way for the Houston company’s creditors to cast their votes in the coming weeks on a plan that a number of them have found to be problematic.
+In court papers filed before Wednesday’s hearing, Energy XXI said much work remains to securing broad creditor support for the plan. Talks continue, the company said, but the clock is ticking.
+“The debtors do not have the luxury to idle in chapter 11 and wait to negotiate such a transaction—there is no choice but to push forward,” Energy XXI lawyers said in the filing.
+Energy XXI’s bankruptcy filing was prompted by the historic fall of oil and gas prices. According to law firm Haynes and Boone, Energy XXI is one of 85 oil and gas producers that have sought bankruptcy protection in the U.S. and Canada since the start of 2015.
+Energy XXI, which primarily drills for oil and gas in the Gulf of Mexico but which also has some onshore operations in Louisiana, sought chapter 11 protection on April 14. The company’s filing came after negotiating a deal with second-lien bondholders to swap their $1.45 billion in debt, plus another $424 million in interest and premiums, for all of the equity in the restructured company, subject to dilution.
+The holders of 63% of the second-lien bond debt currently support the plan, court papers show, just under the two-thirds threshold required under bankruptcy law.
+Court papers show that since the bankruptcy filing, some of Energy XXI’s senior lenders, part of a group owed $327.1 million, have also thrown their support behind the plan, which provides them with a 100% recovery of their claims.
+Lined up to fight the plan are the official committees representing Energy XXI’s unsecured creditors and shareholders, as well as some junior bondholders. They are fighting to boost recoveries that for some creditors could be as low as 0.2% of their claims. Shareholders are slated to go empty-handed.
+In their objections, the creditors and shareholders raised questions about the company’s valuation, how assets are distributed and the plan’s “death traps”—that is, that the plan slashes creditor payouts if they vote against the plan.
+Energy XXI cautions that its current restructuring plan isn’t a done deal. It recently received a counterproposal on a chapter 11 plan from the unsecured creditors committee.
+“The debtors remain cautiously optimistic that an agreement can be reached with the creditors’ committee that would improve the recoveries to all unsecured creditors in the plan,” the company said in court papers filed Wednesday.
+But time is limited, as Energy XXI doesn’t want to risk losing the support of federal regulators overseeing its offshore drilling operations. It must also contend with the approach of hurricane season, which can greatly affect operations.
+“The deleveraging transaction contemplated by the restructuring better positions the debtors to weather the risks associated with operations in the Gulf of Mexico, including hurricane risks and the attendant costs and delays to production,” Energy XXI said in court papers. “Accordingly, a swift exit from chapter 11, prior to the peak of the hurricane season, is in the debtors’ best interests and will maximize value for their stakeholders.”
+Energy XXI heads back to bankruptcy court on Sept. 13 for a hearing on the restructuring plan itself, court records indicate.
+Write to Jacqueline Palank at jacqueline.palank@wsj.com</div>
+
+  <hr class="separator"/>
+
+  <h2>Modell’s, Sports Direct Don’t Bid on Sports Authority</h2>
+  <h4>By Peg Brickley and Lillian Rizzo</h4>
+  <h5>Jun 27, 20168:00amEDT</h5>
+  <div>The deadline for bids on Sports Authority has passed without an offer from rival Modell’s Sporting Goods and British retailer Sports Direct International, people familiar with the matter said Friday.
+There will be an auction for the leases and other remaining assets of the failed retailer, but there’s little to no hope of a deal that could save a significant piece of the Sports Authority chain, which filed for bankruptcy protection in March.
+At one point, Modell’s and Sports Direct were in talks about a bid that could have saved 100 to 200 Sports Authority stores and the jobs of thousands of employees, these people said.
+That proposal shrunk over the past week, the people said, and when bids were due on Thursday, there was no bid from Modell’s and Sports Direct.
+So while either of the big sporting goods sellers could still make a bid on Sports Authority’s intellectual property, including its online selling apparatus, the string of stores that stretched across the U.S. will not survive the bankruptcy.
+A spokesman for Sports Direct, Britain’s largest seller of sports gear, could not immediately be reached Friday for comment. A Modell’s spokesman could not be reached for comment. A spokeswoman for Sports Authority did not respond to a request to comment on the state of bids for the fading company.
+Going-out-of-business sales are under way at some 450 stores, conducted by liquidators Hilco Merchant Resources LLC, Gordon Brothers Retail Partners LLC and Tiger Capital Group LLC. Sports Authority’s trying to pay off more than $1 billion in debt in chapter 11.</div>
+  <hr class="separator"/>
+</div>
+
+</body>
+</html>
