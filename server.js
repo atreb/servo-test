@@ -33,16 +33,15 @@ app.post('/uploadendpoint', function (req, res) {
   var form = new multiParty.Form();
   form.parse(req, function (err, fields, files) {
     if (err) return res.json({error: err.stack});
-    /* This saves the file to downloads directory in current directory
-    fs.rename(files.file[0].path, './downloads/' + files.file[0].originalFilename, function (err) {
+    //This saves the file to downloads directory in current directory
+    fs.rename(files.file[0].path, './' + files.file[0].originalFilename, function (err) {
       if (err) return res.json({error: err.stack});
       res.json({fields: fields, files: files});
     });
-    */
-    fs.unlink(files.file[0].path, function (err) {
-      if (err) return res.json({error: err.stack});
-      res.json({msg: 'File was successfully uploaded to server and then deleted'});
-    });
+    // fs.unlink(files.file[0].path, function (err) {
+    //   if (err) return res.json({error: err.stack});
+    //   res.json({msg: 'File was successfully uploaded to server and then deleted'});
+    // });
   });
 });
 
