@@ -8,8 +8,8 @@ fi
 SPLUNK_SERVER=splunk.services.dowjones.net:9000
 SPLUNK_HOME=/home/app/splunk
 SPLUNK_INPUTS=(
-"/var/log/app/"     # Example directory
-"/var/log/node.log" # Example file
+"/var/log/app/"     # Example directory [Use this for servo2 docker]
+"/var/log/app.log" # Example file [This is for servo2 node log]
 )
 
 if [ ! -d "$SPLUNK_HOME" ]; then
