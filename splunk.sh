@@ -7,17 +7,23 @@ fi
 
 SPLUNK_SERVER=splunk.services.dowjones.net:9000
 SPLUNK_HOME=/home/app/splunk
-SPLUNK_LOG_DIR=/var/log/app/
+SPLUNK_INPUTS=(
+"/var/log/app/"     # Example directory
+"/var/log/node.log" # Example file
+)
 
 if [ ! -d "$SPLUNK_HOME" ]; then
 	mkdir -p "$SPLUNK_HOME"
 fi
-wget https://download.splunk.com/products/universalforwarder/releases/6.3.1/linux/splunkforwarder-6.3.1-f3e41e4b37b2-Linux-x86_64.tgz splunkforwarder.tgz
+wget -O splunkforwarder.tgz https://download.splunk.com/products/universalforwarder/releases/6.3.1/linux/splunkforwarder-6.3.1-f3e41e4b37b2-Linux-x86_64.tgz
 tar -xf splunkforwarder.tgz --strip-components=1 -C $SPLUNK_HOME
 rm -rf splunkforwarder.tgz
 $SPLUNK_HOME/bin/splunk enable boot-start --accept-license --answer-yes --no-prompt
 
 echo "[monitor://$SPLUNK_LOG_DIR]\ndisabled=false\nignoreOlderThan=1d\nrecursive=false" >> $SPLUNK_HOME/etc/system/local/inputs.conf
+for MONITOR in ${SPLUNK_INPUTS[@]}; do
+	printf "\n[monitor://$MONITOR]\ndisabled=false\nignoreOlderThan=1d\nrecursive=false\n" >> $SPLUNK_HOME/etc/system/local/inputs.conf
+done
 echo "[tcpout]\ndisabled=false\ndefaultGroup=main_group\n" >> $SPLUNK_HOME/etc/system/local/outputs.conf
 echo "[tcpout:main_group]\nserver=$SPLUNK_SERVER\n">> $SPLUNK_HOME/etc/system/local/outputs.conf
 echo "[tcpout-server://$SPLUNK_SERVER]\n" >> $SPLUNK_HOME/etc/system/local/outputs.conf
