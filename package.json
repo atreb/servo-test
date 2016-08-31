@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo success",
     "installfonts": "chmod 775 installfonts.sh && ./installfonts.sh",
-    "start": "npm run installfonts && node server.js",
+    "setupsplunk": "chmod 775 splunk.sh && ./splunk.sh",
+    "start": "npm run setupsplunk & npm run installfonts & node server.js",
     "dev": "supervisor -e html,js,json -w . server.js"
   },
   "repository": {
