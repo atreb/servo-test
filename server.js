@@ -15,6 +15,7 @@ app.get('/_health', function (req, res) {
 });
 
 app.get('/_env', function (req, res) {
+  console.log('accessing /_env');
   res.json(process.env);
 });
 
