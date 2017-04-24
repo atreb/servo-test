@@ -16,6 +16,7 @@
   "author": "Bhupendra Atre",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.44.0",
     "body-parser": "^1.15.2",
     "express": "^4.13.4",
     "html-pdf": "^2.0.1",

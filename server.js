@@ -6,7 +6,8 @@ var fs = require('fs'),
   bodyParser = require('body-parser'),
   pdf = require('html-pdf'),
   pdfOptions = require('./pdf.options.json'),
-  fs = require('fs');
+  fs = require('fs'),
+  s3svc = require('./s3svc.js');
 
 app.use(bodyParser.json());
 
@@ -20,11 +21,19 @@ app.get('/_env', function (req, res) {
   res.json(process.env);
 });
 
+//elb has 60 sec ideal time on connections so dont inc nginx timeout beyond that
 app.get('/slowendpoint', function (req, res) {
   //wait for 12 sec for nginx to timeout at 10 sec
   setTimeout(function () {
     res.json({status: '12 sec delayed response'});
   }, 12000);
+});
+
+app.get('/s3/:action(get|put|delete|list)', function (req, res) {
+  s3svc(req.params.action, function (err, data) {
+    if (err) return res.status(500).json({error: err.stack});
+    res.json(data);
+  });
 });
 
 app.post('/postendpoint', function (req, res) {
