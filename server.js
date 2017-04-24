@@ -12,7 +12,6 @@ var fs = require('fs'),
 app.use(bodyParser.json());
 
 app.get('/_health', function (req, res) {
-  console.log('accessing /_health');
   res.json({status: 'ok'});
 });
 
