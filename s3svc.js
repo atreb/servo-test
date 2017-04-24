@@ -17,7 +17,11 @@ function get(cb) {
     Key: prefix + 'default.txt'
   };
   console.log('s3 get:', params);
-  s3.getObject(params, cb);
+  s3.getObject(params, function (err, data) {
+    if (err) return cb(err);
+    data.Body = data.Body.toString()
+    cb(null, data);
+  });
 }
 
 function put(cb) {

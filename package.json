@@ -5,9 +5,11 @@
   "main": "server.js",
   "scripts": {
     "test": "echo success",
-    "installfonts": "chmod 775 installfonts.sh && ./installfonts.sh",
-    "start": "npm run installfonts && node server.js",
+    "start": "node server.js",
     "dev": "supervisor -e html,js,json -w . server.js"
+  },
+  "engines": {
+    "node": "6.4.1"
   },
   "repository": {
     "type": "git",
@@ -16,11 +18,8 @@
   "author": "Bhupendra Atre",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.44.0",
-    "body-parser": "^1.15.2",
-    "express": "^4.13.4",
-    "html-pdf": "^2.0.1",
-    "multiparty": "^4.1.2"
+    "aws-sdk": "^2.45.0",
+    "express": "^4.15.2"
   },
   "devDependencies": {
     "supervisor": "^0.11.0"
