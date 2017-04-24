@@ -34,7 +34,7 @@ function put(cb) {
 function remove(cb) {
   var params = {
     Bucket: bucket,
-    Key: prefix + 'default.js'
+    Key: prefix + 'default.txt'
   };
   console.log('s3 delete:', params);
   s3.deleteObject(params, cb);
