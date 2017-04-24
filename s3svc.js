@@ -25,7 +25,8 @@ function put(cb) {
     ACL: 'public-read',
     Body: new Date().toString(),
     Bucket: bucket,
-    Key: prefix + 'default.txt'
+    Key: prefix + 'default.txt',
+    ContentType: 'text/plain'
   };
   console.log('s3 put:', params);
   s3.upload(params, cb);
