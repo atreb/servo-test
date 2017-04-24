@@ -1,6 +1,8 @@
 var AWS = require('aws-sdk'),
   s3 = new AWS.S3(),
-  fs = require('fs');
+  fs = require('fs'),
+  bucket = process.env.SERVO_S3_BUCKET,
+  prefix = process.env.SERVO_S3_KEY_PREFIX;
 
 module.exports = function (action, cb) {
   if (action === 'get') return get(cb);
@@ -11,32 +13,40 @@ module.exports = function (action, cb) {
 
 
 function get(cb) {
-  s3.getObject({
-    Bucket: process.env.SERVO_S3_BUCKET,
-    Key: process.env.SERVO_S3_KEY_PREFIX + '/server.js'
-  }, cb);
+  var params = {
+    Bucket: bucket,
+    Key: prefix + '/default.txt'
+  };
+  console.log('s3 get:', params);
+  s3.getObject(params, cb);
 }
 
 function put(cb) {
-  s3.upload({
+  var params = {
     ACL: 'public-read',
-    Body: fs.createReadStream('./server.js'),
-    Bucket: process.env.SERVO_S3_BUCKET,
-    Key: process.env.SERVO_S3_KEY_PREFIX + '/server.js'
-  }, cb);
+    Body: new Date().toString(),
+    Bucket: bucket,
+    Key: prefix + '/default.txt'
+  };
+  console.log('s3 put:', params);
+  s3.upload(params, cb);
 }
 
 function remove(cb) {
-  s3.deleteObject({
-    Bucket: process.env.SERVO_S3_BUCKET,
-    Key: process.env.SERVO_S3_KEY_PREFIX + '/server.js'
-  }, cb);
+  var params = {
+    Bucket: bucket,
+    Key: prefix + '/server.js'
+  };
+  console.log('s3 delete:', params);
+  s3.deleteObject(params, cb);
 }
 
 function list(cb) {
-  s3.listObjects({
-    Bucket: process.env.SERVO_S3_BUCKET,
+  var params = {
+    Bucket: bucket,
     Delimiter: '/',
-    Prefix: proces.env.SERVO_S3_KEY_PREFIX
-  }, cb);
+    Prefix: prefix
+  };
+  console.log('s3 list:', params);
+  s3.listObjects(params, cb);
 }
