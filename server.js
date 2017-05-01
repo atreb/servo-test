@@ -1,7 +1,8 @@
 const fs = require('fs'),
   app = require('express')(),
   PORT = process.env.PORT || 4001,
-  s3svc = require('./s3svc.js');
+  s3svc = require('./s3svc.js'),
+  bodyParser = require('body-parser');
 
 app.get('/_health', (req, res) => {
   res.json({status: 'ok'});
@@ -26,6 +27,11 @@ app.get('/s3/:action(get|put|delete|list)', (req, res) => {
   });
 });
 
+app.post('/webhook', bodyParser.json(), (req, res) => {
+  console.log(`/webhook recieved POST body: ${JSON.stringify(req.body)}`);
+  res.status(204);
+});
+
 app.listen(PORT, () => {
-  console.log('Application started on port: ' + PORT);
+  console.log(`Application started on port: ${PORT}`);
 });
