@@ -6,3 +6,5 @@ Simple dockerized nodejs application to test on servo 2
 - all other env variables are passed into continer at run time
 - ideally have one process on ENTRYPOINT so that the logs will flow into docker log on host
 
+ISSUES:
+- unable to switch node version
