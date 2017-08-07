@@ -8,6 +8,7 @@ COPY . /home/app
 RUN apk update &&\
   apk upgrade &&\
   apk add nodejs &&\
+  apk add nodejs-npm &&\
   rm -rf /var/cache/apk/* &&\
   npm config set loglevel error &&\
   npm install -g forever &&\
