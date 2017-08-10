@@ -13,6 +13,11 @@ app.get('/_env', (req, res) => {
   res.json(process.env);
 });
 
+app.get('/_headers', (req, res) => {
+  console.log('assessing /_headers');
+  res.json(req.headers);
+});
+
 //elb has 60 sec ideal time on connections so dont inc nginx timeout beyond that
 app.get('/slowendpoint', (req, res) => {
   setTimeout(function () {
