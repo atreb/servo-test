@@ -1,8 +1,36 @@
 const fs = require('fs'),
-  app = require('express')(),
+  express = require('express')
+  app = express(),
   PORT = process.env.PORT || 4001,
   s3svc = require('./s3svc.js'),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  http = require('http'),
+  server = http.createServer(app),
+  io = require('socket.io').listen(server);
+
+//------------------------------------------------------------------------------
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/static/index.html');
+});
+app.get('/socket.io-client/dist/socket.io.js', (req, res) => {
+    res.sendFile(__dirname + '/node_modules/socket.io-client/dist/socket.io.js');
+});
+let clientCount = 0;
+io.on('connection', function (socket) {
+    //console.log(`SocketId:${socket.id} connected`);
+    clientCount++;
+    io.emit('clientCount', clientCount);
+    socket.on('disconnect', function (reason) {
+      clientCount--;
+      io.emit('clientCount', clientCount);
+      //console.log(`SocketId:${socket.id} disconnected Reason:${reason}`);
+    });
+    setInterval(()=>{
+      io.emit('serverDate', new Date());
+    }, 1000);
+});
+
+//------------------------------------------------------------------------------
 
 app.get('/_health', (req, res) => {
   res.json({status: 'ok'});
@@ -37,6 +65,6 @@ app.post('/webhook', bodyParser.json(), (req, res) => {
   res.status(204);
 });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Application started on port: ${PORT}`);
 });
