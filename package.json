@@ -21,7 +21,7 @@
     "aws-sdk": "^2.45.0",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "socket.io": "^2.0.3",
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {
     "supervisor": "^0.11.0"
