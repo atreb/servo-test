@@ -20,10 +20,10 @@
   "dependencies": {
     "aws-sdk": "^2.45.0",
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "socket.io": "^2.0.3",
   },
   "devDependencies": {
-    "socket.io": "^2.0.3",
     "supervisor": "^0.11.0"
   }
 }
