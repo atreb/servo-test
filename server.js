@@ -6,7 +6,8 @@ const fs = require('fs'),
   bodyParser = require('body-parser'),
   http = require('http'),
   server = http.createServer(app),
-  io = require('socket.io').listen(server);
+  io = require('socket.io').listen(server),
+  os = require('os');
 
 //------------------------------------------------------------------------------
 app.get('/', (req, res) => {
@@ -19,14 +20,15 @@ let clientCount = 0;
 io.on('connection', function (socket) {
     //console.log(`SocketId:${socket.id} connected`);
     clientCount++;
-    io.emit('clientCount', clientCount);
+    socket.emit('hostname', os.hostname());
+    socket.emit('clientCount', clientCount);
     socket.on('disconnect', function (reason) {
       clientCount--;
-      io.emit('clientCount', clientCount);
       //console.log(`SocketId:${socket.id} disconnected Reason:${reason}`);
     });
     setInterval(()=>{
-      io.emit('serverDate', new Date());
+      socket.emit('clientCount', clientCount);
+      socket.emit('serverDate', new Date());
     }, 1000);
 });
 

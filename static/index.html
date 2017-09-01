@@ -25,7 +25,7 @@
         </ul>
         <hr class="my-4">
         <h3>websocket test</h3>
-        <p>Total clients connected: <small id='clientCount'></small><br/>server date: <small id='serverDate'></small></p>
+        <p>Connected to host: <small id="hostname"></small></br>Total clients connected on this host: <small id='clientCount'></small><br/>server date: <small id='serverDate'></small></p>
       </div>
     </div>
 
@@ -37,6 +37,9 @@
     <script src="/socket.io-client/dist/socket.io.js"></script>
     <script>
         var socket = io();
+        socket.on('hostname', function (data) {
+          document.getElementById("hostname").innerHTML = data;
+        });
         socket.on('clientCount', function (data) {
           document.getElementById("clientCount").innerHTML = data;
         });
