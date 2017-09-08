@@ -8,9 +8,6 @@
     "start": "node server.js",
     "dev": "supervisor -e html,js,json -w . server.js"
   },
-  "engines": {
-    "node": "6.11.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.dowjones.net/AtreB/servo-test.git"
@@ -18,10 +15,7 @@
   "author": "Bhupendra Atre",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.45.0",
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "socket.io": "^2.0.3"
+    "express": "^4.15.2"
   },
   "devDependencies": {
     "supervisor": "^0.11.0"
