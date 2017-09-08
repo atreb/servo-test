@@ -15,7 +15,12 @@
   "author": "Bhupendra Atre",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "phantomjs": "2.1.7",
+    "xml-escape": "1.1.0",
+    "xml2js": "0.4.16",
+    "html-pdf" : "2.0.1",
+    "libxmljs" : "0.18.0"
   },
   "devDependencies": {
     "supervisor": "^0.11.0"
