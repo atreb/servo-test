@@ -1,3 +1,6 @@
 {
-  "platform": "nodejs"
+  "platform": "nodejs",
+  "tags": {
+    "sslnodejs": {}
+  }
 }
