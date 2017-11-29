@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM amazonlinux:latest
 
 MAINTAINER "bhupendra.atre@dowjones.com"
 
