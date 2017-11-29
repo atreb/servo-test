@@ -2,13 +2,28 @@ FROM amazonlinux:latest
 
 MAINTAINER "bhupendra.atre@dowjones.com"
 
-RUN curl -L https://git.io/n-install | bash &&\
-    n 6 &&\
-    npm config set loglevel error &&\
-    npm config set progress false &&\
-    npm install -g forever n &&\
+#install lts node repo
+#install lts node & development tools to build native addons
+#yum cleanup
+#install global packages
+#set npm registry to use
+RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - &&\
+    yum install nodejs gcc-c++ make -y &&\
+    yum clean all &&\
+    npm install -g n forever &&\
+    npm config set registry http://production.npmserver.oregon.onservo.com/
 
+#switch node version using n
+RUN n 6
+
+#copy node app code
 WORKDIR /home/app
 COPY . /home/app
+
+#prep node app
+RUN npm install --unsafe-perm &&\
+    npm test &&\
+    npm prune --production &&\
+    npm cache clean
 
 ENTRYPOINT ["forever", "server.js"]
