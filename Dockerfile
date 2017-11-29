@@ -11,10 +11,12 @@ RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - &&\
     yum install nodejs gcc-c++ make -y &&\
     yum clean all &&\
     npm install -g n forever &&\
-    npm config set registry http://production.npmserver.oregon.onservo.com/
+    npm config set registry http://production.npmserver.oregon.onservo.com/ &&\
+    curl -o /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 &&\
+    chmod +x /usr/bin/jq
 
 #switch node version using n
-RUN n 6
+RUN n cat package.json | jq '.engines.node'
 
 #copy node app code
 WORKDIR /home/app
