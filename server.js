@@ -4,7 +4,7 @@ const fs = require('fs'),
   bodyParser = require('body-parser');
 
 app.get('/_health', (req, res) => {
-  res.json({status: 'ok'});
+  res.send(':-)');
 });
 
 app.get('/_env', (req, res) => {
