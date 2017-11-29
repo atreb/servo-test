@@ -11,7 +11,7 @@ RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - &&\
     yum install nodejs gcc-c++ make -y &&\
     yum clean all &&\
     npm install -g n forever &&\
-    npm config set registry http://production.npmserver.virginia.onservo.com/
+    npm config set registry https://registry.npmjs.org/
 
 #switch node version using n
 RUN n 6
