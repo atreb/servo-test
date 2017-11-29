@@ -1,5 +1,5 @@
 {
-  "platform": "nodejs",
+  "platform": "docker",
   "tags": {
     "default": {
       "owner": "bhupendra.atre@dowjones.com",
