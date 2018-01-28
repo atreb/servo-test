@@ -26,4 +26,4 @@ RUN npm install --unsafe-perm &&\
     npm test &&\
     npm prune --production
 
-CMD splunk && forever -l /var/log/app/amzn-nodejs-splunk.log server.js
+ENTRYPOINT ["./entrypoint.sh"]
