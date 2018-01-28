@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #start splunk
-#splunk
+splunk
 
 #start node app
 forever -l /var/log/app/forever.log \
