@@ -24,6 +24,7 @@ COPY . /home/app
 #prep node app
 RUN npm install --unsafe-perm &&\
     npm test &&\
-    npm prune --production
+    npm prune --production &&\
+    chmod +x ./entrypoint.sh
 
 ENTRYPOINT ["./entrypoint.sh"]
