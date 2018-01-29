@@ -9,7 +9,7 @@ MAINTAINER "bhupendra.atre@dowjones.com"
 #install global packages
 #set npm registry to use
 RUN yum install bash
-RUN curl -s -l https://s3.amazonaws.com/servo-utils/splunk-setup-dev.sh | bash -s pci &&\
+RUN curl -s -l https://s3.amazonaws.com/servo-utils/splunk-setup-dev.sh | bash - &&\
     curl -s -l https://rpm.nodesource.com/setup_8.x | bash - &&\
     yum install nodejs gcc-c++ make -y &&\
     yum clean all &&\

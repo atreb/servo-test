@@ -6,5 +6,5 @@ Simple dockerized nodejs application to test on servo 2
 - all other env variables are passed into continer at run time
 - ideally have one process on ENTRYPOINT so that the logs will flow into docker log on host
 
-docker/amzn-nodejs-splunk-pci
+docker/amzn-nodejs-splunk
 using splunk-setup-dev.sh Jan 29, 2018 4:02:52
