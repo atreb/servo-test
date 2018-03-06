@@ -9,7 +9,7 @@
     "dev": "supervisor -e html,js,json -w . server.js"
   },
   "engines": {
-    "node": "8"
+    "node": "8.9.1"
   },
   "repository": {
     "type": "git",
