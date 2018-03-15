@@ -5,6 +5,7 @@
       "owner": "bhupendra.atre@dowjones.com",
       "bu": "djcs",
       "product": "servo",
+      "component": "test",
       "environment": "dev"
     }
   }
