@@ -38,10 +38,10 @@ app.get('/_health', (req, res) => {
   res.json({status: 'ok'});
 });
 
-app.get('/_env', (req, res) => {
-  console.log('accessing /_env');
-  res.json(process.env);
-});
+// app.get('/_env', (req, res) => {
+//   console.log('accessing /_env');
+//   res.json(process.env);
+// });
 
 app.get('/_headers', (req, res) => {
   console.log('assessing /_headers');
@@ -62,10 +62,10 @@ app.get('/s3/:action(get|put|delete|list)', (req, res) => {
   });
 });
 
-app.post('/webhook', bodyParser.json(), (req, res) => {
-  console.log(`/webhook recieved POST body: ${JSON.stringify(req.body)}`);
-  res.status(204);
-});
+// app.post('/webhook', bodyParser.json(), (req, res) => {
+//   console.log(`/webhook recieved POST body: ${JSON.stringify(req.body)}`);
+//   res.status(204);
+// });
 
 server.listen(PORT, () => {
   console.log(`Application started on port: ${PORT}`);
