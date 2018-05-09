@@ -6,7 +6,8 @@
       "bu": "djcs",
       "product": "servo",
       "component": "othr",
-      "environment": "dev"
+      "environment": "dev",
+      "appid": "servo"
     }
   }
 }
