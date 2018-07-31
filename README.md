@@ -7,4 +7,3 @@ Simple application to test on servo 2
 - use SERVO_S3_BUCKET and SERVO_S3_KEY_PREFIX environment variable to perform s3 operations
 
 nodejs
-======
