@@ -8,9 +8,6 @@
     "start": "node server.js",
     "dev": "supervisor -e html,js,json -w . server.js"
   },
-  "engines": {
-    "node": "9"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.dowjones.net/AtreB/servo-test.git"
