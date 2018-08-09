@@ -1,8 +1,8 @@
 {
   "apps": [{
       "name": "servo-test",
-      "script": "./app.js",
-      "instances": -1,
+      "script": "./server.js",
+      "instances": 0,
       "exec_mode": "cluster"
   }]
 }
