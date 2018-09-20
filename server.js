@@ -16,7 +16,9 @@ app.get('/', (req, res) => {
 app.get('/socket.io-client/dist/socket.io.js', (req, res) => {
     res.sendFile(__dirname + '/node_modules/socket.io-client/dist/socket.io.js');
 });
-let clientCount = 0;
+
+var clientCount = 0;
+
 io.on('connection', function (socket) {
     //console.log(`SocketId:${socket.id} connected`);
     clientCount++;
