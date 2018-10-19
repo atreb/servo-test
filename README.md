@@ -1,11 +1,10 @@
 #servo-test
 
-Simple application to test on servo 2
+Simple application to test on servo using alpine node docker image
 
-- To use specific node version add it in package.json under the node engines attributes
-- To override the default nginx 504 and 502 response pages, add corresponding 504.html and 502.html under nginx folder in the root of your app repo.
-- use SERVO_S3_BUCKET and SERVO_S3_KEY_PREFIX environment variable to perform s3 operations
-
-nodejs
-======
-======
+steps to run locally
+```
+docker build -t servo-test .
+docker run -e "PORT=80" -p 4000:80 servo-test
+```
+Open browser to http://localhost:4000
