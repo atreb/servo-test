@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:8
+FROM mhart/alpine-node:10
 WORKDIR /home/app
 COPY package.json package-lock.json ./
 RUN apk add --no-cache make gcc g++ python &&\
