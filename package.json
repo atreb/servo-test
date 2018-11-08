@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "supervisor -e html,js,json -w . server.js"
+    "dev": "supervisor -e html,js,json -w . server.js",
+    "test": "echo success"
   },
   "engines": {
     "node": "10.11.0"
