@@ -2,7 +2,7 @@ FROM mhart/alpine-node:8
 WORKDIR /home/app
 COPY package.json package-lock.json ./
 RUN apk add --no-cache make gcc g++ python &&\
-    if [ -f .npmrc ]; then echo 'Found .npmrc. Will use it'; else npm config set registry https://npm.onservo.com; fi &&\
+    npm config set registry https://registry.npmjs.org/ &&\
     npm config set loglevel error &&\
     if [ "$(npm -v | cut -d '.' -f1)" -ge "5" -a -f package-lock.json ]; then npm ci; else npm i; fi &&\
     npm test &&\
