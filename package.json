@@ -10,7 +10,7 @@
     "postinstall": "if [ -z \"$SERVO_BUILD\" ]; then echo 'Running local'; else echo 'Running in servo'; fi"
   },
   "engines": {
-    "node": "10.11.0"
+    "node": "88888888"
   },
   "repository": {
     "type": "git",
