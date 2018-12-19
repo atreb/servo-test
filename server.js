@@ -37,6 +37,9 @@ io.on('connection', function (socket) {
 app.get('/_health', (req, res) => {
   res.json({status: 'ok'});
 });
+app.get('/_versions, (req, res) => {
+  res.json(process.versions);
+});
 
 // app.get('/_env', (req, res) => {
 //   console.log('accessing /_env');
