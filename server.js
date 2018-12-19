@@ -37,7 +37,7 @@ io.on('connection', function (socket) {
 app.get('/_health', (req, res) => {
   res.json({status: 'ok'});
 });
-app.get('/_versions, (req, res) => {
+app.get('/_versions', (req, res) => {
   res.json(process.versions);
 });
 
