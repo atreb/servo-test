@@ -34,8 +34,20 @@ io.on('connection', function (socket) {
 
 //------------------------------------------------------------------------------
 
+let healthStatus = 1;
 app.get('/_health', (req, res) => {
-  res.json({status: 'ok'});
+  if (req.query.status) {
+    if (req.query.status === '0') {
+      healthStatus = 0;
+    } else {
+      healthStatus = 1;
+    }
+  }
+  if (healthStatus == 1) {
+    res.json({status: 'ok'});
+  } else {
+    res.status(500).json({error: 'healthstatus set'});
+  }
 });
 app.get('/_versions', (req, res) => {
   res.json(process.versions);
