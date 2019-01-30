@@ -7,7 +7,7 @@
       "product": "servo",
       "component": "othr",
       "environment": "dev",
-      "appid": "servo,servo"
+      "appid": "servo"
     }
   }
 }
