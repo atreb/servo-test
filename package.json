@@ -7,6 +7,7 @@
     "test": "echo success",
     "start": "node server.js",
     "dev": "supervisor -e html,js,json -w . server.js",
+    "preinstall": "node -v; npm -v",
     "postinstall": "if [ -z \"$SERVO_BUILD\" ]; then echo 'Running local'; else echo 'Running in servo'; fi"
   },
   "engines": {
