@@ -1,3 +1,4 @@
+require('newrelic');
 const fs = require('fs'),
   express = require('express')
   app = express(),
