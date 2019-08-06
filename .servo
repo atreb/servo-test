@@ -1,5 +1,4 @@
 {
-  "platform": "nodejs",
   "tags": {
     "default": {
       "owner": "bhupendra.atre@dowjones.com",
@@ -7,7 +6,7 @@
       "product": "servo",
       "component": "othr",
       "environment": "dev",
-      "appid": "djcs_servo_sp,djcs_servo_sp1"
+      "appid": "djcs_servo_sp"
     }
   }
 }
