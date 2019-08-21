@@ -66,6 +66,10 @@ app.get('/s3/:action(get|put|delete|list)', (req, res) => {
   });
 });
 
+app.get('/env', (req, res) => {
+  res.json(process.env);
+});
+
 // app.post('/webhook', bodyParser.json(), (req, res) => {
 //   console.log(`/webhook recieved POST body: ${JSON.stringify(req.body)}`);
 //   res.status(204);
