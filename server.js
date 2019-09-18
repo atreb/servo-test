@@ -36,6 +36,7 @@ io.on('connection', function (socket) {
 //------------------------------------------------------------------------------
 
 app.get('/_health', (req, res) => {
+  console.log('accessing /_health');
   res.json({status: 'ok'});
 });
 app.get('/_versions', (req, res) => {
