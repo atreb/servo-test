@@ -4,3 +4,4 @@
 !.gitignore
 !.servo
 !.npmrc
+!.DS_Store
