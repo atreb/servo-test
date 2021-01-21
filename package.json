@@ -24,7 +24,7 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "newrelic": "^5.10.0",
-    "socket.io": "^2.0.3"
+    "socket.io": "^2.4.0"
   },
   "devDependencies": {
     "supervisor": "^0.11.0"
