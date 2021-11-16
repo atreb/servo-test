@@ -20,7 +20,7 @@
   "author": "Bhupendra Atre",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.45.0",
+    "aws-sdk": "^2.814.0",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "newrelic": "^5.10.0",
